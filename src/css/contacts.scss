@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'MyriadPro Regular';
+  src: url('../../fonts/MyriadPro-Regular.woff');
+}
+
+body {
+  width: 1920px;
+  margin: 0;
+  padding: 0;
+  font-family: 'HelveticaNeue Regular', sans-serif;
+  color: #fff;
+  position: relative;
+  background-color: #06192a;
+}
+
+.wrapper {
+  width: 1620px;
+  margin: 0 auto;
+}
+
+body * {
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  width: auto;
+  max-width: 100%
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 1px solid #fff;
+  width: 1920px;
+  position: absolute;
+  z-index: 1000;
+
+  .flex-header {
+    display: flex;
+    min-height: 95px;
+    align-items: center;
+    justify-content: flex-end;
+
+    a.logo {
+      font-family: 'MyriadPro Bold', sans-serif;
+      font-weight: 700;
+      font-size: 23px;
+      text-transform: uppercase;
+      margin: 0 auto 0 0;
+
+      img {
+        width: 28px;
+        height: auto;
+      }
+    }
+
+    nav.desktop-menu {
+      display: flex;
+      justify-content: space-between;
+      width: 635px;
+      padding-right: 40px;
+
+
+      a {
+        font-family: 'HelveticaNeue Regular', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .leng-icons {
+        a {
+          img {
+            width: 25px;
+            height: auto;
+          }
+
+        }
+
+        a:last-of-type {
+          padding-left: 5px;
+        }
+      }
+    }
+
+    label:first-of-type {
+      width: 160px;
+
+      input[type='text'] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background-color: transparent;
+        width: 100%;
+        color: #fff;
+      }
+    }
+
+    label:last-of-type {
+
+      input[type="submit"] {
+        width: 40px;
+        background: transparent url("../../images/search.svg") no-repeat center;
+        border: none;
+      }
+
+
+    }
+  }
+}
+
+.bg_continer-contact {
+  width: 1920px;
+  background: url("../../images/contact_bg.png") no-repeat;
+
+  min-height: 339px;
+}
+
+.contact-container {
+  background: #dde1ed;
+  padding: 65px;
+
+  h3 {
+    font-family: 'MyriadPro Regular', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .contact-container-flex {
+    display: flex;
+
+    .text-container, .slider-contact-first, .slider-contact-first, #first-map, #second-map {
+      width: 33.3%;
+    }
+
+    .text-container {
+      background-color: #06192a;
+      padding: 30px;
+      height: 281px;
+
+      p {
+        font-family: "MyriadPro Regular", sans-serif;
+        font-size: 18px;
+      }
+    }
+
+    #first-map, #second-map {
+      height: 281px;
+    }
+  }
+}
+
+.slider-contact-first div, .slider-contact-second div {
+  width: 540px;
+  height: auto;
+}
+
+button.slick-prev, button.slick-next {
+  display: none !important;
+}
+
+.slick-dots {
+  bottom: 10px;
+
+  li {
+    margin: 0;
+
+    button:before {
+      width: 10px;
+      height: 10px;
+      content: '';
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      bottom: 0;
+    }
+  }
+
+  li.slick-active button:before {
+    background-color: #fff;
+  }
+}
