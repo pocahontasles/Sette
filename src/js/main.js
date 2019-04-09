@@ -95,14 +95,21 @@ jQuery(document).ready(function () {
         $('.details').show().addClass('fadeInUp')/*animate({
             height: '100%'
         }, 500);*/
+        $('section.slide-section').css('display', 'none');
     });
     $('.btn-galery').click(function (e) {
         e.preventDefault();
-        $('.details').removeClass('fadeInUp').addClass('fadeOutDown');/*animate({
+        $('.details').css('display', 'none')/*.css('display', 'none')*/;/*animate({
             height: '0'
         }, 500);*/
         $('main.main').addClass('fadeOutUp');
-        $('.slick-prev, .slick-next ').css('top', '55%')
+        var windowWidth = $(window).width();
+        $('section.slide-section').css('display', 'block');
+        if(windowWidth < 1140){
+            $('.slick-prev, .slick-next ').css('bottom', '0');
+        } else  $('.slick-prev, .slick-next ').css('top', '56%');
+
+
     });
 });
 
@@ -110,7 +117,9 @@ jQuery(document).ready(function () {
 jQuery(document).ready(function () {
     $('.work-item').click(function (e) {
         /*e.preventDefault();*/
-
+        var top = $(document).scrollTop();
+        $('.modal-overlay').css('top', top);
+        $('.modal-overlay').removeClass('fadeOut');
         var htmlString = $( this ).html();
         var activeWork = document.createElement('div');
         activeWork.innerHTML = htmlString;
@@ -119,15 +128,18 @@ jQuery(document).ready(function () {
         $('.modal-overlay').css('display', 'flex');
         $('body').css('overflow', 'hidden');
 
+
     });
     $('.modal-overlay').click(function () {
+        $('.modal-overlay').addClass('fadeOut');
         $(this).css('display', 'none');
         $('body').css('overflow', 'auto');
         $('.modal-content div').remove();
     });
     $('.close').click(function () {
 
-        $('.modal-overlay').css('display', 'none');
+       /* $('.modal-overlay').css('display', 'none');*/
+        $('.modal-overlay').addClass('fadeOut');
         $('body').css('overflow', 'auto');
         $('.modal-content div').remove();
     });
@@ -137,4 +149,5 @@ jQuery(document).ready(function () {
     });
 
 });
+
 

@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="build/css/style.css">
 </head>
 <body>
-<div class="modal-overlay">
+<div class="modal-overlay animated fadeIn">
   <div class="modal-content">
     <button class="close">X</button>
   </div>
@@ -29,32 +29,53 @@
       <a href="index.html" class="logo">Sette
         <img src="images/logo-2.svg" alt="logo">
         studio</a>
-
       <nav class="desktop-menu">
         <a href="index.html" class="scroll-about">Главная </a>
-        <a href="#presentation" class="scroll-process"> Презентация </a>
+        <a href="#" class="scroll-process"> Презентация </a>
         <a href="openings.html" class="scroll-station">Вакансии </a>
         <a href="contacts.html" class="scroll-book">Контакты </a>
         <a href="#" class="scroll-book">Форма ТЗ</a>
-        <div class="leng-icons">
-          <a href="">
-            <img src="images/ru.svg" alt="rus">
-          </a>
-          <a href="">
-            <img src="images/en.svg" alt="eng">
-          </a>
-        </div>
       </nav>
-      <label>
-        <input type="text" name="search">
-      </label>
-      <label>
-        <input type="submit" name="submit" value="">
-      </label>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <g><title>background</title>
+              <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+            </g>
+            <g><title>Layer 1</title>
+              <path fill="#ffffff" id="svg_1"
+                    d="m4,10l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2zm24,4l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2zm0,8l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2z"/>
+            </g>
+          </svg>
+        </button>
+        <div class="dropdown-content">
+          <a href="index.html" class="scroll-about">Главная </a>
+          <a href="#" class="scroll-process"> Презентация </a>
+          <a href="openings.html" class="scroll-station">Вакансии </a>
+          <a href="contacts.html" class="scroll-book">Контакты </a>
+          <a href="#" class="scroll-book">Форма ТЗ</a>
+        </div>
+      </div>
+      <div class="leng-icons">
+        <a href="#">
+          <img src="images/ru.svg" alt="rus">
+        </a>
+        <a href="#">
+          <img src="images/en.svg" alt="eng">
+        </a>
+      </div>
+      <form>
+        <label>
+          <input type="text" name="search">
+        </label>
+        <label>
+          <input type="submit" name="submit" value="">
+        </label>
+      </form>
     </div>
   </div>
 </header>
-<main class="main animated 	">
+<main class="main animated">
   <div class="wrapper">
     <h1>Качественный Архитектурный Маркетинг</h1>
     <p>Разработка и реализация дизайн-проектов выставочных стендов, шоу-румов и торговых площадей. Организация
@@ -761,6 +782,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script type="application/javascript" src="bootstrap/bootstrap.min.js"></script>
-<script type="application/javascript" src="src/js/main.js"></script>
+<script type="application/javascript" src="build/js/main.js"></script>
 </body>
 </html>

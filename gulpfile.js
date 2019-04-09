@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const concat = require('gulp-concat');
+/*const concat = require('gulp-concat');*/
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
@@ -8,7 +8,7 @@ const sass = require('gulp-sass');
 function styles() {
     return gulp.src('./src/css/**/*.scss')
         .pipe(sass().on('errosr', sass.logError))
-        .pipe(concat('all.css'))
+        /*.pipe(concat('all.css'))*/
         .pipe(autoprefixer({
             browsers: ['> 0.1%'],
             cascade: false

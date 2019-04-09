@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         /*autoplay: true,
-        autoplaySpeed: 4000,*/
+        autoplaySpeed: 5000,*/
         dots: true,
         arrow: false
     });
@@ -13,9 +13,10 @@ jQuery(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         /*autoplay: true,
-        autoplaySpeed: 4000,*/
+        autoplaySpeed: 5000,*/
         dots: true,
-        arrow: false
+        arrow: false,
+
     });
 });
 
