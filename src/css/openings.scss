@@ -1,4 +1,4 @@
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1919px) and (max-width: 1921px){
   body {
     width: 1920px;
     margin: 0;
@@ -36,7 +36,7 @@
     color: #000;
   }
   header {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #929dae;
     width: 1920px;
     position: absolute;
     z-index: 1000;
@@ -72,13 +72,12 @@
           font-size: 14px;
           font-weight: 400;
           text-transform: uppercase;
+          color: #929dae;
         }
 
         a:hover {
           text-decoration: underline;
         }
-
-
       }
       .leng-icons {
         text-decoration: none;
@@ -101,7 +100,7 @@
 
         input[type='text'] {
           border: none;
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid #929dae;
           background-color: transparent;
           width: 100%;
           color: #fff;
@@ -200,7 +199,7 @@
 }
 
 /*max-width: 1920px*/
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1919px) {
   body {
     width: 100%;
     margin: 0;
@@ -211,8 +210,6 @@
     background-color: #06192a;
 
   }
-
-
   .wrapper {
     width: 1170px;
     margin: 0 auto;
@@ -242,7 +239,7 @@
     color: #000;
   }
   header {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #929dae;
     width: 100%;
     position: absolute;
     z-index: 1000;
@@ -278,6 +275,7 @@
           font-size: 14px;
           font-weight: 400;
           text-transform: uppercase;
+          color: #929dae;
         }
 
         a:hover {
@@ -307,7 +305,7 @@
 
         input[type='text'] {
           border: none;
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid #929dae;
           background-color: transparent;
           width: 100%;
           color: #fff;

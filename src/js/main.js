@@ -2,8 +2,6 @@ jQuery(document).ready(function () {
     jQuery('.slider-container').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        /*autoplay: true,
-        autoplaySpeed: 4000,*/
         dots: true,
         arrow: true
 
@@ -120,10 +118,13 @@ jQuery(document).ready(function () {
         var top = $(document).scrollTop();
         $('.modal-overlay').css('top', top);
         $('.modal-overlay').removeClass('fadeOut');
+
+        /*var htmlString  = '<img src="../../images/work-1.png" alt="galery">';*/
         var htmlString = $( this ).html();
         var activeWork = document.createElement('div');
         activeWork.innerHTML = htmlString;
         $('.modal-content').append(activeWork);
+
         $(this).addClass('show-work');
         $('.modal-overlay').css('display', 'flex');
         $('body').css('overflow', 'hidden');
@@ -131,15 +132,14 @@ jQuery(document).ready(function () {
 
     });
     $('.modal-overlay').click(function () {
-        $('.modal-overlay').addClass('fadeOut');
+        $('.modal-overlay').css('display', 'none');
         $(this).css('display', 'none');
         $('body').css('overflow', 'auto');
         $('.modal-content div').remove();
     });
     $('.close').click(function () {
 
-       /* $('.modal-overlay').css('display', 'none');*/
-        $('.modal-overlay').addClass('fadeOut');
+        $('.modal-overlay').css('display', 'none');
         $('body').css('overflow', 'auto');
         $('.modal-content div').remove();
     });
@@ -150,4 +150,82 @@ jQuery(document).ready(function () {
 
 });
 
+jQuery(document).ready(function () {
+    var ctx = document.getElementById('first_canvas').getContext('2d');
+    var al = 0;
+    var start = 4.72;
+    var cw = ctx.canvas.width;
+    var ch = ctx.canvas.height;
+    var diff;
+    function progressSim(){
+        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.lineWidth = 5;
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = "#a4acc3";
+        ctx.textAlign = 'center';
+        /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
+        ctx.beginPath();
+        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.stroke();
+        if(al >= 100){
+            clearTimeout(sim);
+            // Add scripting here that will run when progress completes
+        }
+        al++;
+    }
+    var sim = setInterval(progressSim, 30);
+});
+jQuery(document).ready(function () {
+    var ctx = document.getElementById('second_canvas').getContext('2d');
+    var al = 0;
+    var start = 4.72;
+    var cw = ctx.canvas.width;
+    var ch = ctx.canvas.height;
+    var diff;
+    function progressSim(){
+        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.lineWidth = 5;
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = "#a4acc3";
+        ctx.textAlign = 'center';
+        /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
+        ctx.beginPath();
+        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.stroke();
+        if(al >= 100){
+            clearTimeout(sim);
+            // Add scripting here that will run when progress completes
+        }
+        al++;
+    }
+    var sim = setInterval(progressSim, 30);
+});
 
+jQuery(document).ready(function () {
+    var ctx = document.getElementById('third_canvas').getContext('2d');
+    var al = 0;
+    var start = 4.72;
+    var cw = ctx.canvas.width;
+    var ch = ctx.canvas.height;
+    var diff;
+    function progressSim(){
+        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.lineWidth = 5;
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = "#a4acc3";
+        ctx.textAlign = 'center';
+        /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
+        ctx.beginPath();
+        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.stroke();
+        if(al >= 100){
+            clearTimeout(sim);
+            // Add scripting here that will run when progress completes
+        }
+        al++;
+    }
+    var sim = setInterval(progressSim, 30);
+});
