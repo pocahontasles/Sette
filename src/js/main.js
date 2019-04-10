@@ -7,6 +7,8 @@ jQuery(document).ready(function () {
 
     });
 });
+
+
 (function ($) {
     $.fn.countTo = function (options) {
         // merge the default plugin settings with the custom options
@@ -103,9 +105,9 @@ jQuery(document).ready(function () {
         $('main.main').addClass('fadeOutUp');
         var windowWidth = $(window).width();
         $('section.slide-section').css('display', 'block');
-        if(windowWidth < 1140){
+        if (windowWidth < 1140) {
             $('.slick-prev, .slick-next ').css('bottom', '0');
-        } else  $('.slick-prev, .slick-next ').css('top', '56%');
+        } else $('.slick-prev, .slick-next ').css('top', '56%');
 
 
     });
@@ -114,13 +116,13 @@ jQuery(document).ready(function () {
 
 jQuery(document).ready(function () {
     $('.work-item').click(function (e) {
-        /*e.preventDefault();*/
+        /* e.preventDefault();*/
         var top = $(document).scrollTop();
         $('.modal-overlay').css('top', top);
-        $('.modal-overlay').removeClass('fadeOut');
-
-        /*var htmlString  = '<img src="../../images/work-1.png" alt="galery">';*/
-        var htmlString = $( this ).html();
+        $('.modal-overlay').css('display', 'block');
+        /* $('.modal-overlay').removeClass('fadeOut')*/
+        ;
+        var htmlString = $(this).html();
         var activeWork = document.createElement('div');
         activeWork.innerHTML = htmlString;
         $('.modal-content').append(activeWork);
@@ -129,19 +131,54 @@ jQuery(document).ready(function () {
         $('.modal-overlay').css('display', 'flex');
         $('body').css('overflow', 'hidden');
 
+        var images = [
+            'images/work-1.png',
+            'images/work-2.png',
+            'images/work-3.png',
+            'images/work-4.png',
+            'images/work-5.png'
+        ];
+
+        function loadImages(imgArr, targetId) {
+            for (var i = 0; i < imgArr.length; i++) {
+                console.log(imgArr[i]);
+                var img = new Image();
+                img.src = imgArr[i];
+                document.getElementById('output').appendChild(img);
+            }
+
+            jQuery('.modal-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrow: true
+
+            });
+        }
+
+        loadImages(images);
+
 
     });
     $('.modal-overlay').click(function () {
         $('.modal-overlay').css('display', 'none');
         $(this).css('display', 'none');
         $('body').css('overflow', 'auto');
-        $('.modal-content div').remove();
+        $('.modal-content div:last-of-type, .modal-content div:first-of-type > *').remove();
+        $('#output').removeClass('slick-initialized');
+        $('#output').removeClass( 'slick-slider');
+        $('#output').removeClass( 'slick-dotted');
+
     });
     $('.close').click(function () {
 
         $('.modal-overlay').css('display', 'none');
         $('body').css('overflow', 'auto');
-        $('.modal-content div').remove();
+        $('.modal-content div:last-of-type, .modal-content div:first-of-type > *').remove();
+        $('#output').removeClass('slick-initialized');
+        $('#output').removeClass( 'slick-slider');
+        $('#output').removeClass( 'slick-dotted');
+
     });
     $('.modal-content').click(function (e) {
         e.preventDefault();
@@ -157,8 +194,9 @@ jQuery(document).ready(function () {
     var cw = ctx.canvas.width;
     var ch = ctx.canvas.height;
     var diff;
-    function progressSim(){
-        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+
+    function progressSim() {
+        diff = ((al / 100) * Math.PI * 2 * 10).toFixed(2);
         ctx.clearRect(0, 0, cw, ch);
         ctx.lineWidth = 5;
         ctx.fillStyle = '#fff';
@@ -166,14 +204,15 @@ jQuery(document).ready(function () {
         ctx.textAlign = 'center';
         /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
         ctx.beginPath();
-        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.arc(50, 55, 40, start, diff / 10 + start, false);
         ctx.stroke();
-        if(al >= 100){
+        if (al >= 100) {
             clearTimeout(sim);
             // Add scripting here that will run when progress completes
         }
         al++;
     }
+
     var sim = setInterval(progressSim, 30);
 });
 jQuery(document).ready(function () {
@@ -183,8 +222,9 @@ jQuery(document).ready(function () {
     var cw = ctx.canvas.width;
     var ch = ctx.canvas.height;
     var diff;
-    function progressSim(){
-        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+
+    function progressSim() {
+        diff = ((al / 100) * Math.PI * 2 * 10).toFixed(2);
         ctx.clearRect(0, 0, cw, ch);
         ctx.lineWidth = 5;
         ctx.fillStyle = '#fff';
@@ -192,14 +232,15 @@ jQuery(document).ready(function () {
         ctx.textAlign = 'center';
         /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
         ctx.beginPath();
-        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.arc(50, 55, 40, start, diff / 10 + start, false);
         ctx.stroke();
-        if(al >= 100){
+        if (al >= 100) {
             clearTimeout(sim);
             // Add scripting here that will run when progress completes
         }
         al++;
     }
+
     var sim = setInterval(progressSim, 30);
 });
 
@@ -210,8 +251,9 @@ jQuery(document).ready(function () {
     var cw = ctx.canvas.width;
     var ch = ctx.canvas.height;
     var diff;
-    function progressSim(){
-        diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+
+    function progressSim() {
+        diff = ((al / 100) * Math.PI * 2 * 10).toFixed(2);
         ctx.clearRect(0, 0, cw, ch);
         ctx.lineWidth = 5;
         ctx.fillStyle = '#fff';
@@ -219,13 +261,14 @@ jQuery(document).ready(function () {
         ctx.textAlign = 'center';
         /*ctx.fillText(al+'%', cw*.5, ch*.5+2, cw);*/
         ctx.beginPath();
-        ctx.arc(50, 55, 40, start, diff/10+start, false);
+        ctx.arc(50, 55, 40, start, diff / 10 + start, false);
         ctx.stroke();
-        if(al >= 100){
+        if (al >= 100) {
             clearTimeout(sim);
             // Add scripting here that will run when progress completes
         }
         al++;
     }
+
     var sim = setInterval(progressSim, 30);
 });
